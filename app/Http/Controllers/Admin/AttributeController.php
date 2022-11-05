@@ -30,4 +30,22 @@ class AttributeController extends Controller
 
         return redirect('admin/attribute')->with('message', 'Attrbiute added successfully');
     }
+
+    public function edit(Attribute $attribute)
+    {
+        return view('admin.attribute.edit', compact('attribute'));
+    }
+
+    public function update(AttributeFormRequest $request, $attribute)
+    {
+        $validatedData = $request->validated();
+
+        $attribute = Attribute::findOrFail($attribute);
+
+        $attribute->attribute_name = $validatedData['attribute_name'];
+
+        $attribute->update();
+
+        return redirect('admin/attribute')->with('message', 'Attrbiute updated successfully');
+    }
 }

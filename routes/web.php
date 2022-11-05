@@ -28,8 +28,12 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
     //Attribute routes
-    Route::get('attribute', [App\Http\Controllers\Admin\AttributeController::class, 'index']);
-    Route::get('attribute/create', [App\Http\Controllers\Admin\AttributeController::class, 'create']);
-    Route::post('attribute', [App\Http\Controllers\Admin\AttributeController::class, 'store']);
+    Route::controller(App\Http\Controllers\Admin\AttributeController::class)->group(function () {
+        Route::get('/attribute', 'index');
+        Route::get('/attribute/create', 'create');
+        Route::post('/attribute', 'store');
+        Route::get('/attribute/{attribute}/edit', 'edit');
+        Route::put('/attribute/{attribute}', 'update');
+    });
 });
 
