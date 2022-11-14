@@ -41,6 +41,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Attribute Name</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,6 +49,7 @@
                                 <tr>
                                     <td>{{ $attribute->id }}</td>
                                     <td>{{ $attribute->attribute_name }}</td>
+                                    <td>{{ $attribute->attribute_status }}</td>
                                     <td>
                                         <a href="{{ url('admin/attribute/'.$attribute->id.'/edit') }}" class="btn btn-success">Edit</a>
                                         <a href="#" wire:click="deleteAttribute({{ $attribute->id }})" data-bs-toggle="modal" data-bs-target="#deleteModal" class="btn btn-danger">Delete</a>

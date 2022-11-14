@@ -35,5 +35,6 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('/attribute/{attribute}/edit', 'edit');
         Route::put('/attribute/{attribute}', 'update');
     });
+
 });
 

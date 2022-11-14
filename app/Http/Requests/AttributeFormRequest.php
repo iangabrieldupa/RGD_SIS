@@ -27,6 +27,10 @@ class AttributeFormRequest extends FormRequest
             'attribute_name'    => [
                 'required',
                 'string'
+            ],
+            'attribute_status'  => [
+                'required',
+                'string'
             ]
         ];
     }

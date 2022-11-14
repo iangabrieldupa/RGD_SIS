@@ -27,6 +27,13 @@
                                 <input type="text" name="attribute_name" value="{{ $attribute->attribute_name }}" class="form-control">
                             </div>
                             <div class="mb-3">
+                                <label>Status</label>
+                                <select name="attribute_status" id="attribute_status" value="{{ $attribute->attribute_status }}">
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
                                 <button type="submit" class="btn btn-primary float-end">Update</button>
                             </div>
                         </div>
