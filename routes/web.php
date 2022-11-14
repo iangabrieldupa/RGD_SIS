@@ -62,5 +62,16 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('/brand/{brand}/edit', 'edit');
         Route::put('/brand/{brand}', 'update');
     });
+
+    //Supplier Routes
+    Route::controller(App\Http\Controllers\Admin\SupplierController::class)->group(function () {
+        Route::get('/supplier', 'index');
+        Route::get('/supplier/create', 'create');
+        Route::post('/supplier', 'store');
+        Route::get('/supplier/{supplier}/edit', 'edit');
+        Route::put('/supplier/{supplier}', 'update');
+    });
+
+
 });
 
