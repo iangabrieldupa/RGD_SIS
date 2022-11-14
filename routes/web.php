@@ -45,5 +45,22 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::put('/category/{category}', 'update');
     });
 
+    //Unit routes
+    Route::controller(App\Http\Controllers\Admin\UnitController::class)->group(function () {
+        Route::get('/unit', 'index');
+        Route::get('/unit/create', 'create');
+        Route::post('/unit', 'store');
+        Route::get('/unit/{unit}/edit', 'edit');
+        Route::put('/unit/{unit}', 'update');
+    });
+
+    //Brand routes
+    Route::controller(App\Http\Controllers\Admin\BrandController::class)->group(function () {
+        Route::get('/brand', 'index');
+        Route::get('/brand/create', 'create');
+        Route::post('/brand', 'store');
+        Route::get('/brand/{brand}/edit', 'edit');
+        Route::put('/brand/{brand}', 'update');
+    });
 });
 
