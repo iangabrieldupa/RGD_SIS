@@ -68,7 +68,12 @@
                         <option selected>No brand</option>
                         <table>
                             @foreach ($brands as $item)
-                                <option value="{{ $item->brand_name }}">{{ $item->brand_name }}</option>
+                            @if($item->brand_status == 'Active')
+                                <option value="{{ $item->brand_name }}">
+                                    <td>{{$item->brand_name}}</td>
+                                @else
+                                    <td id=""></td>
+                                @endif</option>
                             @endforeach
                         </table>
                     </select>
@@ -79,9 +84,14 @@
                     <select id="product_category" name="category_name" class="form-control">
                       <option selected>No category</option>
                       <table>
-                        @foreach ($categories as $item)
-                            <option value="{{ $item->category_name }}">{{ $item->category_name }}</option>
-                        @endforeach
+                            @foreach ($categories as $item)
+                                @if($item->category_status == 'Active')
+                                    <option value="{{ $item->category_name }}">
+                                        <td>{{$item->category_name}}</td>
+                                @else
+                                    <td id=""></td>
+                                @endif</option>
+                            @endforeach
                     </table>
                     </select>
                   </div>
