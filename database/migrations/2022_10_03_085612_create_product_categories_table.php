@@ -16,7 +16,7 @@ class CreateProductCategoriesTable extends Migration
         Schema::create('product_categories', function (Blueprint $table) {
             $table->id();
             $table->string('category_name');
-            $table->string('category_status');
+            $table->tinyInteger('category_status')->default('0')->comment('1=hidden, 0=visible');
             $table->timestamps();
         });
     }

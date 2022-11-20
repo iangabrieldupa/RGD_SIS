@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Unit extends Model
 {
@@ -14,4 +15,8 @@ class Unit extends Model
     protected $fillable = [
         'unit_name',
     ];
+
+    public function products(){
+        return $this->belongsTo(Product::class);
+    }
 }

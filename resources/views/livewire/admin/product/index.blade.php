@@ -63,9 +63,9 @@
                                         <td>{{ $product->quantity }}</td>
                                         <td>{{ $product->product_image }}</td>
                                         <td>{{ $product->product_description }}</td>
-                                        <td>{{ $product->brand_id }}</td>
-                                        <td>{{ $product->category_id }}</td>
-                                        <td>{{ $product->unit_id }}</td>
+                                        <td>{{ $product->brands->brand_name}}</td>
+                                        <td>{{ $product->categories->category_name }}</td>
+                                        <td>{{ $product->units->unit_name }}</td>
                                         <td>{{ $product->vat_type }}</td>
                                         <td>
                                             <a href="{{ url('admin/product/'.$product->id.'/edit') }}" class="btn btn-success">Edit</a>

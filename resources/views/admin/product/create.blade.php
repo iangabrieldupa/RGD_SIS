@@ -10,7 +10,7 @@
                 <h2 class="alert alert-success">{{ session('message') }}</h2>
             </div>
             @endif
-            <form action="{{ url('/product') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('/admin/product') }}" method="POST" enctype="multipart/form-data">
               @method('post')
                 @csrf
                 <div class="form-row">
@@ -69,7 +69,7 @@
                         <table>
                             @foreach ($brands as $item)
                             @if($item->brand_status == 'Active')
-                                <option value="{{ $item->brand_name }}">
+                                <option value="{{ $item->id }}">
                                     <td>{{$item->brand_name}}</td>
                                 @else
                                     <td id=""></td>
@@ -85,12 +85,7 @@
                       <option selected>No category</option>
                       <table>
                             @foreach ($categories as $item)
-                                @if($item->category_status == 'Active')
-                                    <option value="{{ $item->category_name }}">
-                                        <td>{{$item->category_name}}</td>
-                                @else
-                                    <td id=""></td>
-                                @endif</option>
+                                    <option value="{{ $item->id}}">{{$item->category_name}}</option>
                             @endforeach
                     </table>
                     </select>
@@ -101,7 +96,7 @@
                       <option selected>No unit</option>
                       <table>
                         @foreach ($units as $item)
-                            <option value="{{ $item->unit_name }}">{{ $item->unit_name }}</option>
+                            <option value="{{ $item->id }}">{{ $item->unit_name }}</option>
                         @endforeach
                     </table>
                     </select>

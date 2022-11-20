@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Unit;
+use App\Models\Brand;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -23,4 +26,15 @@ class Product extends Model
         'unit_id',
         'vat_type',
     ];
+
+    public function brands(){
+        return $this->belongsTo(Brand::class, 'brand_id', 'id');
+    }
+
+    public function categories(){
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
+    public function units(){
+        return $this->belongsTo(Unit::class, 'unit_id', 'id');
+    }
 }
