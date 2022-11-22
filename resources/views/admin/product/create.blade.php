@@ -85,7 +85,7 @@
                       <table>
                             @foreach ($categories as $item)
                                 @if($item->category_status == 1)
-                                        <option value="{{ $item->id}}">{{$item->category_name}}</option>
+                                    <option value="{{ $item->id}}">{{$item->category_name}}</option>
                                 @endif
                             @endforeach
                     </table>
