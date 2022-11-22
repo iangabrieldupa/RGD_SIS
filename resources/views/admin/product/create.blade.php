@@ -64,16 +64,15 @@
 
                   <div class="form-group col-md-4">
                     <label for="product_brand">Product Brand</label>
-                    <select id="product_brand" name="brand_name"class="form-control">
+                    <select id="product_brand" name="brand_id" class="form-control">
                         <option selected>No brand</option>
                         <table>
                             @foreach ($brands as $item)
-                            @if($item->brand_status == 'Active')
+                            @if($item->brand_status == 1)
                                 <option value="{{ $item->id }}">
-                                    <td>{{$item->brand_name}}</td>
-                                @else
-                                    <td id=""></td>
-                                @endif</option>
+                                    {{$item->brand_name}}
+                                </option>
+                            @endif
                             @endforeach
                         </table>
                     </select>
@@ -81,18 +80,20 @@
 
                   <div class="form-group col-md-4">
                     <label for="product_category">Product Category</label>
-                    <select id="product_category" name="category_name" class="form-control">
+                    <select id="product_category" name="category_id" class="form-control">
                       <option selected>No category</option>
                       <table>
                             @foreach ($categories as $item)
-                                    <option value="{{ $item->id}}">{{$item->category_name}}</option>
+                                @if($item->category_status == 1)
+                                        <option value="{{ $item->id}}">{{$item->category_name}}</option>
+                                @endif
                             @endforeach
                     </table>
                     </select>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="product_unit">Product Unit</label>
-                    <select id="product_unit" name="unit_name" class="form-control">
+                    <select id="product_unit" name="unit_id" class="form-control">
                       <option selected>No unit</option>
                       <table>
                         @foreach ($units as $item)

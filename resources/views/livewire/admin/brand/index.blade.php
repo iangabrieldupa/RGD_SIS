@@ -50,7 +50,7 @@
                                     <tr>
                                         <td>{{ $brand->id }}</td>
                                         <td>{{ $brand->brand_name }}</td>
-                                        <td>{{ $brand->brand_status }}</td>
+                                        <td>{{ $brand->brand_status == '1' ? 'Visible':'Hidden'  }}</td>
                                         <td>
                                             <a href="{{ url('admin/brand/'.$brand->id.'/edit') }}" class="btn btn-success">Edit</a>
                                             <a href="#" wire:click="deleteBrand({{ $brand->id }})" data-bs-toggle="modal" data-bs-target="#deleteModal" class="btn btn-danger">Delete</a>

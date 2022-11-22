@@ -25,7 +25,7 @@ class CategoryController extends Controller
 
         $category = new Category;
         $category->category_name = $validatedData['category_name'];
-        $category->category_status = $validatedData['category_status'] == true ? '1': '0';
+        $category->category_status = $validatedData['category_status'] == true ? '0': '1';
         // $category->category_status = $validatedData['category_status']== true ? 'Active': '';
 
         $category->save();
