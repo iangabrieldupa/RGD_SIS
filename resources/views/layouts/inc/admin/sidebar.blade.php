@@ -5,26 +5,7 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <span class="menu-title">Create User</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <span class="menu-title">Manage User</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <span class="menu-title">Create User Roles</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <span class="menu-title">Manage User Roles</span>
-        </a>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-title">Product Settings</span>
@@ -41,7 +22,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
+        <a class="nav-link" href="product">
           <span class="menu-title">Create Products</span>
         </a>
       </li>

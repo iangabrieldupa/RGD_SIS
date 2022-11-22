@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AttributeFormRequest extends FormRequest
+class SupplierFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +24,18 @@ class AttributeFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'attribute_name'    => [
+            'supplier_name'    => [
                 'required',
                 'string'
             ],
-            'attribute_status'  => [
+            'supplier_address'  => [
                 'required',
                 'string'
-            ]
+            ],
+            'supplier_contact_no'  => [
+                'required',
+                'string'
+            ],
         ];
     }
 }
