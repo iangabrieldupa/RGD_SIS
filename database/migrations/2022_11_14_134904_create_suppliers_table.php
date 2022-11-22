@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAppPermissionsTable extends Migration
+class CreateSuppliersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateAppPermissionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('app_permissions', function (Blueprint $table) {
+        Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
+            $table->string('supplier_name');
+            $table->string('supplier_address');
+            $table->string('supplier_contact_no');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateAppPermissionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('app_permissions');
+        Schema::dropIfExists('suppliers');
     }
 }
