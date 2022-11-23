@@ -5,26 +5,7 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <span class="menu-title">Create User</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <span class="menu-title">Manage User</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <span class="menu-title">Create User Roles</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <span class="menu-title">Manage User Roles</span>
-        </a>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-title">Product Settings</span>
@@ -32,7 +13,6 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="attribute">Product Attributes</a></li>
             <li class="nav-item"> <a class="nav-link" href="category">Product Category</a></li>
             <li class="nav-item"> <a class="nav-link" href="unit">Product Units</a></li>
             <li class="nav-item"> <a class="nav-link" href="brand">Product Brands</a></li>
@@ -41,18 +21,8 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <span class="menu-title">Create Products</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/charts/chartjs.html">
-          <span class="menu-title">Manage Product</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/tables/basic-table.html">
-          <span class="menu-title">Restock</span>
+        <a class="nav-link" href="/admin/product">
+            Manage Products
         </a>
       </li>
       <li class="nav-item">
@@ -61,7 +31,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages/icons/mdi.html">
+        <a class="nav-link" href="/admin/order">
           <span class="menu-title">Invoice Data Entry</span>
         </a>
       </li>

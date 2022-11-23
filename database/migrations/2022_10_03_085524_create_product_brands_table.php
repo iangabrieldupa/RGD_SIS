@@ -15,6 +15,8 @@ class CreateProductBrandsTable extends Migration
     {
         Schema::create('product_brands', function (Blueprint $table) {
             $table->id();
+            $table->string('brand_name');
+            $table->tinyInteger('brand_status')->default('0')->comment('1=hidden, 0=visible');
             $table->timestamps();
         });
     }

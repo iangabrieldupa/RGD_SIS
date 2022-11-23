@@ -43,7 +43,7 @@
     <script src="vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
-
+  <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
   <script src="{{ asset('admin/vendors/datatables.net/jquery.dataTables.js') }}"></script>
   <script src="{{ asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
   <!-- End plugin js for this page-->
@@ -59,5 +59,6 @@
   <script src="{{ asset('admin/js/dataTables.bootstrap4.js') }}"></script>
 
     @livewireScripts
+    @stack('script')
 </body>
 </html>
