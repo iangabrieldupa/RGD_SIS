@@ -29,8 +29,9 @@
                             <div class="mb-3">
                                 <label>Status</label>
                                 <select name="category_status" id="category_status" value="{{ $category->category_status }}">
-                                    <option value="Active">Active</option>
-                                    <option value="Inactive">Inactive</option>
+                                    <option disabled selected hidden>-</option>
+                                    <option value="0">Active</option>
+                                    <option value="1">Inactive</option>
                                 </select>
                             </div>
                             <div class="mb-3">

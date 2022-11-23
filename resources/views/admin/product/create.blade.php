@@ -49,18 +49,6 @@
 
 
 
-    <div class="form-group col-md-6">
-        <label for="product_description">mao ni brand</label>
-        <input type="text" class="form-control" name="brand_id">
-    </div>
-    <div class="form-group col-md-6">
-        <label for="product_description">mao ni category</label>
-        <input type="text" class="form-control" name="category_id">
-    </div>
-    <div class="form-group col-md-6">
-        <label for="product_description">mao ni unit</label>
-        <input type="text" class="form-control" name="unit_id">
-    </div>
 
                   <div class="form-group col-md-4">
                     <label for="product_brand">Product Brand</label>

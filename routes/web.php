@@ -27,15 +27,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
-    //Attribute routes
-    Route::controller(App\Http\Controllers\Admin\AttributeController::class)->group(function () {
-        Route::get('/attribute', 'index');
-        Route::get('/attribute/create', 'create');
-        Route::post('/attribute', 'store');
-        Route::get('/attribute/{attribute}/edit', 'edit');
-        Route::put('/attribute/{attribute}', 'update');
-    });
-
     //Category routes
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function () {
         Route::get('/category', 'index');
@@ -79,6 +70,15 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::post('/product', 'store');
         Route::get('/product/{product}/edit', 'edit');
         Route::put('/product/{product}', 'update');
+    });
+
+    //Order Routes
+    Route::controller(App\Http\Controllers\Admin\OrderController::class)->group(function () {
+        Route::get('/order', 'index');
+        Route::get('/order/create', 'create');
+        Route::post('/order', 'store');
+        Route::get('/order/{order}/edit', 'edit');
+        Route::put('/order/{order}', 'update');
     });
 });
 

@@ -3,7 +3,7 @@
 @section('content')
 
 <div>
-    <livewire:admin.attribute.index />
+    <livewire:admin.order.index />
 </div>
 
 @endsection

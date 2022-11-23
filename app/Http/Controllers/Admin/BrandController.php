@@ -25,7 +25,7 @@ class BrandController extends Controller
 
         $brand = new Brand;
         $brand->brand_name = $validatedData['brand_name'];
-        $brand->brand_status = $validatedData['brand_status'];
+        $brand->brand_status = $validatedData['brand_status'] == true ? '0': '1';
 
         $brand->save();
 
@@ -45,7 +45,7 @@ class BrandController extends Controller
 
 
         $brand->brand_name = $validatedData['brand_name'];
-        $brand->brand_status = $validatedData['brand_status'];
+        $brand->brand_status = $validatedData['brand_status'] == true ? '0': '1';
 
         $brand->update();
 

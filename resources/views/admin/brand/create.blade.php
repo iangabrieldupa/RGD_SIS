@@ -27,8 +27,9 @@
                             <div class="mb-3">
                                 <label>Status</label>
                                 <select name="brand_status" id="brand_status">
-                                    <option value="1">Active</option>
-                                    <option value="0">Inactive</option>
+                                    <option disabled selected hidden>-</option>
+                                    <option value="0">Active</option>
+                                    <option value="1">Inactive</option>
                                 </select>
                             </div>
                             <div class="mb-3">

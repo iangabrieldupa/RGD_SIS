@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Unit;
 use App\Models\Brand;
+use App\Models\Order;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -37,5 +38,9 @@ class Product extends Model
 
     public function units(){
         return $this->belongsTo(Unit::class, 'unit_id', 'id');
+    }
+
+    public function orders(){
+        return $this->belongsTo(Order::class, 'product_id', 'id');
     }
 }

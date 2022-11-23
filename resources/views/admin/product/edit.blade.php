@@ -10,34 +10,37 @@
                 <h2 class="alert alert-success">{{ session('message') }}</h2>
             </div>
             @endif
-            <form>
+            <form action="{{ url('admin/product/'.$product->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="product_name">Product name</label>
-                    <input type="text" class="form-control" id="product_name" placeholder="Name of the Product">
+                    <input name="product_name" value="{{ $product->product_name }}" type="text" class="form-control" id="product_name" placeholder="Name of the Product">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="sku">SKU</label>
-                    <input type="text" class="form-control" id="sku" placeholder="sku">
+                    <input name="sku"  value="{{ $product->sku }}" type="text" class="form-control" id="sku" placeholder="sku">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="product_unit_price">Product Unit Price</label>
-                  <input type="text" class="form-control" id="product_unit_price" placeholder="Price of the Product">
+                  <input name="product_unit_price" value="{{ $product->product_unit_price }}" type="text" class="form-control" id="product_unit_price" placeholder="Price of the Product">
                 </div>
                 <div class="form-group">
                   <label for="quantity">Quantity</label>
-                  <input type="text" class="form-control" id="quantity" placeholder="Quantity of the Product">
+                  <input name="quantity" value="{{ $product->quantity }}" type="text" class="form-control" id="quantity" placeholder="Quantity of the Product">
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="product_image">Product Image</label>
-                    <input type="text" class="form-control" id="product_image">
+                    <input name="product_image" value="{{ $product->product_image }}" type="text" class="form-control" id="product_image">
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="product_description">Product Description</label>
-                      <input type="text" class="form-control" id="product_description">
+                      <input name="product_description" value="{{ $product->product_description }}" type="text" class="form-control" id="product_description">
                     </div>
 
                     @php
@@ -48,43 +51,45 @@
 
                   <div class="form-group col-md-4">
                     <label for="product_brand">Product Brand</label>
-                    <select id="product_brand" class="form-control">
-                      <option selected>No brand</option>
-                      <table>
-                        @foreach ($brands as $item)
-                            <option>{{ $item->brand_name }}</option>
-                        @endforeach
-                    </table>
+                    <select id="product_brand" name="brand_id" class="form-control">
+                        {{-- <option>{{$product->brands->brand_name}}</option> --}}
+                            @foreach ($brands as $item)
+                            @if($item->brand_status == 1)
+                                <option value="{{ $item->id }}">
+                                    {{$item->brand_name}}
+                                </option>
+                            @endif
+                            @endforeach
                     </select>
                   </div>
                   <div class="form-group col-md-4">
+
                     <label for="product_category">Product Category</label>
-                    <select id="product_category" class="form-control">
-                      <option selected>No category</option>
-                      <table>
-                        @foreach ($categories as $item)
-                            <option>{{ $item->category_name }}</option>
-                        @endforeach
-                    </table>
-                    </select>
+                    <select id="product_category" name="category_id" class="form-control">
+                        {{-- <option>{{$product->categories->category_name}}</option> --}}
+                              @foreach ($categories as $item)
+                                  @if($item->category_status == 1)
+                                      <option value="{{ $item->id}}">{{$item->category_name}}</option>
+                                  @endif
+                              @endforeach
+                      </select>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="product_unit">Product Unit</label>
-                    <select id="product_unit" class="form-control">
-                      <option selected>No unit</option>
-                      <table>
-                        @foreach ($units as $item)
-                            <option>{{ $item->unit_name }}</option>
-                        @endforeach
-                    </table>
-                    </select>
+                    <select id="product_unit" name="unit_id" class="form-control">
+                        {{-- <option>{{$product->units->unit_name}}</option> --}}
+                          @foreach ($units as $item)
+                              <option value="{{ $item->id }}">{{ $item->unit_name }}</option>
+                          @endforeach
+
+                      </select>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="vat_type">Vat Type</label>
-                    <input type="text" class="form-control" id="vat_type">
+                    <input name="vat_type" value="{{ $product->vat_type }}" type="text" class="form-control" id="vat_type">
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Add Product</button>
+                <button type="submit" class="btn btn-primary">Update Product</button>
               </form>
         </div>
     </div>

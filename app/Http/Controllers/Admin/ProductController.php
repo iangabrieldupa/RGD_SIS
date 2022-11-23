@@ -16,7 +16,8 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('admin.product.create');
+        $products = Product::all();
+        return view('admin.product.create', compact('products'));
     }
 
     public function store(ProductFormRequest $request)
@@ -54,7 +55,6 @@ class ProductController extends Controller
         $validatedData = $request->validated();
 
         $product = Product::findOrFail($product);
-
 
         $product->product_name = $validatedData['product_name'];
         $product->sku = $validatedData['sku'];
