@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderFormRequest;
@@ -11,12 +12,14 @@ class OrderController extends Controller
 {
     public function index()
     {
+
         return view('admin.order.index');
     }
 
     public function create()
     {
-        return view('admin.order.create');
+        $products = Product::get();
+        return view('admin.order.create', compact('products'));
     }
 
     public function store(OrderFormRequest $request)
@@ -28,7 +31,7 @@ class OrderController extends Controller
         $order->product_id = $request['product_id'];
         $order->gross_amount = $request['gross_amount'];
         $order->service_charge = $request['service_charge'];
-        $order->vat_charge = $request['vat_charge'];
+
         $order->net_amount = $request['net_amount'];
         $order->discount = $request['discount'];
         $order->post_status = $request['post_status'];
@@ -54,7 +57,7 @@ class OrderController extends Controller
         $order->product_id = $request['product_id'];
         $order->gross_amount = $request['gross_amount'];
         $order->service_charge = $request['service_charge'];
-        $order->vat_charge = $request['vat_charge'];
+
         $order->net_amount = $request['net_amount'];
         $order->discount = $request['discount'];
         $order->post_status = $request['post_status'];

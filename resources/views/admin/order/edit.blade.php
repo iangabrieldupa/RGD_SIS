@@ -36,11 +36,7 @@
                       <input value="{{ $order->service_charge }}" type="text" class="form-control" name="service_charge" placeholder="Service Charge">
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="vat_charge">VAT Charge</label>
-                          <input value="{{ $order->vat_charge }}" type="text" class="form-control" name="vat_charge" placeholder="VAT Charge">
-                        </div>
+
 
                     <div class="form-row">
                     <div class="form-group col-md-6">

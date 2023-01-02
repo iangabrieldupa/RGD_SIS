@@ -17,13 +17,13 @@ class Order extends Model
         'product_id',
         'gross_amount',
         'service_charge',
-        'vat_charge',
+
         'net_amount',
         'discount',
         'post_status',
     ];
 
     public function products(){
-        return $this->belongsToMany(Product::class, 'product_id', 'id');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }

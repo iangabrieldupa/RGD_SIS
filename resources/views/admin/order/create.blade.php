@@ -5,6 +5,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
+            <div class="card-header"><a href="{{ url('admin/order') }}" class="btn btn-primary float-end">Back</a></div>
             @if(session('message'))
             <div>
                 <h2 class="alert alert-success">{{ session('message') }}</h2>
@@ -43,11 +44,7 @@
                       <input type="text" class="form-control" name="service_charge" placeholder="Service Charge">
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="vat_charge">VAT Charge</label>
-                          <input type="text" class="form-control" name="vat_charge" placeholder="VAT Charge">
-                        </div>
+
 
                     <div class="form-row">
                     <div class="form-group col-md-6">

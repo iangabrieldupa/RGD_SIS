@@ -45,7 +45,7 @@
                                     <th>Product ID</th>
                                     <th>Gross Amount</th>
                                     <th>Service Charge</th>
-                                    <th>VAT Charge</th>
+
                                     <th>Net Amount</th>
                                     <th>Discount</th>
                                     <th>Post Status</th>
@@ -59,7 +59,6 @@
                                         <td>{{ $order->product_id }}</td>
                                         <td>{{ $order->gross_amount }}</td>
                                         <td>{{ $order->service_charge }}</td>
-                                        <td>{{ $order->vat_charge}}</td>
                                         <td>{{ $order->net_amount }}</td>
                                         <td>{{ $order->discount }}</td>
                                         <td>{{ $order->post_status }}</td>

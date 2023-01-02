@@ -55,7 +55,7 @@
                         {{-- <option>{{$product->brands->brand_name}}</option> --}}
                             @foreach ($brands as $item)
                             @if($item->brand_status == 1)
-                                <option value="{{ $item->id }}">
+                                <option value="{{ $item->id }}" {{$item->id == $product->brand_id ? 'selected' : ''}}>
                                     {{$item->brand_name}}
                                 </option>
                             @endif
@@ -69,7 +69,7 @@
                         {{-- <option>{{$product->categories->category_name}}</option> --}}
                               @foreach ($categories as $item)
                                   @if($item->category_status == 1)
-                                      <option value="{{ $item->id}}">{{$item->category_name}}</option>
+                                      <option value="{{ $item->id}}" {{$item->id == $product->category_id ? 'selected' : ''}}>{{$item->category_name}}</option>
                                   @endif
                               @endforeach
                       </select>
@@ -79,7 +79,7 @@
                     <select id="product_unit" name="unit_id" class="form-control">
                         {{-- <option>{{$product->units->unit_name}}</option> --}}
                           @foreach ($units as $item)
-                              <option value="{{ $item->id }}">{{ $item->unit_name }}</option>
+                              <option value="{{ $item->id }}" {{$item->id == $product->unit_id ? 'selected' : ''}}>{{ $item->unit_name }}</option>
                           @endforeach
 
                       </select>

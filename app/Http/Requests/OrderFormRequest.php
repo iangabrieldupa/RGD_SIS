@@ -40,10 +40,7 @@ class OrderFormRequest extends FormRequest
                 'nullable',
                 'string'
             ],
-            'vat_charge'  => [
-                'nullable',
-                'string'
-            ],
+
             'net_amount'  => [
                 'nullable',
                 'string'
